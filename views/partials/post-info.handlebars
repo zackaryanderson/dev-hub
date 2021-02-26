@@ -1,0 +1,15 @@
+<div class="card col-8 mb-3 mx-auto">
+    <div class="card-body">
+        <div class="card-title">
+            {{!-- have href link to individual post pages --}}
+            <a href="/post">{{title}}</a>
+        </div>
+        <div class="card-text">
+            <p>{{body}}</p>
+            {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on
+            {{format_date created_at}}
+            |
+            <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+        </div>
+    </div>
+</div>

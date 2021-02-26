@@ -1,1 +1,6 @@
-<h1>WELCOME TO DEVHUB</h1>
+<div class="row mx-auto">
+    {{#each posts as |post|}}
+        {{> post-info post}}
+    {{/each}}
+
+</div>
