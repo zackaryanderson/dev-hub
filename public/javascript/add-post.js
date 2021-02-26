@@ -1,8 +1,8 @@
-async function newFormHandler(event) {
+$(".new-post-form").on("submit", async function (event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value;
-  const post = document.querySelector('input[name="post"]').value;
+  const title = $('input[name="post-title"]').value;
+  const post = $('input[name="post"]').value;
 
   const response = await fetch(`/api/posts`, {
     method: "POST",
@@ -20,8 +20,4 @@ async function newFormHandler(event) {
   } else {
     alert(response.statusText);
   }
-}
-
-document
-  .querySelector(".new-post-form")
-  .addEventListener("submit", newFormHandler);
+});

@@ -1,8 +1,8 @@
-async function editFormHandler(event) {
+$(".edit-post-form").on("submit", async function (event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value.trim();
-  const post = document.querySelector('input[name="post"]').value.trim();
+  const title = $('input[name="post-title"]').value.trim();
+  const post = $('input[name="post"]').value.trim();
   const id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
@@ -22,8 +22,4 @@ async function editFormHandler(event) {
   } else {
     alert(response.statusText);
   }
-}
-
-document
-  .querySelector(".edit-post-form")
-  .addEventListener("submit", editFormHandler);
+});
