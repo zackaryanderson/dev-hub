@@ -10,6 +10,7 @@ router.get('/:id', (req, res) => {
             user_id: req.params.id
         },
         attributes: ['id', 'title', 'body', 'created_at', [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']],
+        order: [['created_at', 'DESC']],
         include: [
             {
                 model: User,
