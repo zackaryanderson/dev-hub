@@ -4,10 +4,10 @@ const { Post, User, Comment } = require('../models');
 
 //get all of the users posts (.../userpage/:id)
 //update to user req.session.user_id
-router.get('/:id', (req, res) => {
+router.get('/', (req, res) => {
     Post.findAll({
         where: {
-            user_id: req.params.id
+            user_id: req.session.user_id
         },
         attributes: ['id', 'title', 'body', 'created_at', [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']],
         order: [['created_at', 'DESC']],
