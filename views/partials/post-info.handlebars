@@ -3,11 +3,16 @@
         <div class="card-title">
             {{!-- have href link to individual post pages --}}
             <a href="/post">{{title}}</a>
+            <a>by {{user.username}} on
+            {{format_date created_at}}</a>
         </div>
         <div class="card-text">
             <p>{{body}}</p>
-            {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on
-            {{format_date created_at}}
+            <button id="like-button" class="btn btn-light">like</button>
+            <button id="comment-button" class="btn btn-light">comment</button>
+        </div>
+        <div class="footer"> 
+            {{vote_count}} {{format_plural "like" vote_count}}
             |
             <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
         </div>
