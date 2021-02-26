@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
+const auth = require('../utils/auth');
 
 //get all of the users posts (.../userpage/:id)
 //update to user req.session.user_id
-router.get('/', (req, res) => {
+router.get('/', auth, (req, res) => {
     Post.findAll({
         where: {
             user_id: req.session.user_id
