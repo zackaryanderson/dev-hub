@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Post,User,Comment,Vote } = require('../../models');
+const auth = require('../../utils/auth');
+const sequelize = require('../../config/connection');
 
 //get all posts (../api/posts/)
 router.get('/', (req, res) => {
@@ -72,9 +74,9 @@ router.get('/:id', (req, res) => {
 //create a post (../api/posts/)
 router.post('/', auth, (req, res) => {
     Post.create({
+        user_id: req.session.user_id,
         title: req.body.title,
-        post_url: req.body.body,
-        user_id: req.session.user_id
+        body: req.body.body
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
@@ -115,7 +117,7 @@ router.put('/:id', auth, (req, res) => {
 });
 
 //delete a post (../api/posts/:id)
-router.delete('/:id', auth, (req, res) => {
+router.delete('/:id', auth,(req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
