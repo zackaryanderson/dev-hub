@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Post,User,Comment,Vote } = require('../../models');
+const auth = require('../../utils/auth');
+const sequelize = require('../../config/connection');
 
 //get all posts (../api/posts/)
 router.get('/', (req, res) => {
@@ -70,11 +72,12 @@ router.get('/:id', (req, res) => {
 });
 
 //create a post (../api/posts/)
-router.post('/', auth, (req, res) => {
+//add auth back in
+router.post('/', (req, res) => {
     Post.create({
+        user_id: req.session.user_id,
         title: req.body.title,
-        post_url: req.body.body,
-        user_id: req.session.user_id
+        body: req.body.body
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
@@ -84,7 +87,8 @@ router.post('/', auth, (req, res) => {
 });
 
 //upvote a post (../api/posts/upvote)
-router.put('/upvote', auth, (req, res) => {
+//add back in auth
+router.put('/upvote', (req, res) => {
     // custom static method created in models/Post.js
     Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
         .then(updatedVoteData => res.json(updatedVoteData))
@@ -95,7 +99,8 @@ router.put('/upvote', auth, (req, res) => {
 });
 
 //update a post (../api/posts/:id)
-router.put('/:id', auth, (req, res) => {
+//add back in auth
+router.put('/:id', (req, res) => {
     Post.update(req.body, {
             where: {
                 id: req.params.id
@@ -115,7 +120,8 @@ router.put('/:id', auth, (req, res) => {
 });
 
 //delete a post (../api/posts/:id)
-router.delete('/:id', auth, (req, res) => {
+//add back auth
+router.delete('/:id', (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
