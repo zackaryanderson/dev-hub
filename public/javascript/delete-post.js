@@ -1,4 +1,4 @@
-$(".delete-post-btn").on("click", async function deleteFormHandler(event) {
+$(".delete-post-btn").on("click", async function (event) {
   event.preventDefault();
 
   const id = window.location.toString().split("/")[
