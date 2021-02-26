@@ -7,7 +7,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const exphbs = require('express-handlebars');
 //put helpers inside the create if we use them
-const hbs = exphbs.create({});
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 //cookies
