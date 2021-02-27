@@ -19,9 +19,6 @@
           <li class="nav-item">
             <a class="nav-link" href="/">Code Help</a>
           </li>
-          {{!-- <li class="nav-item">
-            <a class="nav-link" href="/"></a>
-          </li> --}}
         </ul>
     </div>
     <div class="mx-auto my-2 order-0 order-md-1 position-relative">
@@ -39,6 +36,11 @@
             <a class="nav-link" href="/userpage/">Home</a>
           </li>
         </ul>
+        {{#if loggedIn}}
+          <button id="logout" class="btn btn-no-style text-center mx-auto navbar-nav">logout</button>
+        {{else}}
+          <a href="/login" class="text-center mx-auto navbar-nav">login</a>
+        {{/if}}
     </div>
 </nav>
 <div class="spacing-for-nav" style="margin-top: 10vh">
