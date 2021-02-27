@@ -72,9 +72,8 @@ router.get('/:id', (req, res) => {
 });
 
 //create a post (../api/posts/)
-//add back auth
 //change to user_id: req.session.user_id
-router.post('/', (req, res) => {
+router.post('/', auth,(req, res) => {
     Post.create({
         user_id: req.body.user_id,
         title: req.body.title,
@@ -88,8 +87,7 @@ router.post('/', (req, res) => {
 });
 
 //upvote a post (../api/posts/upvote)
-//add back auth
-router.put('/upvote', (req, res) => {
+router.put('/upvote', auth,(req, res) => {
     // custom static method created in models/Post.js
     Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
         .then(updatedVoteData => res.json(updatedVoteData))
@@ -100,8 +98,7 @@ router.put('/upvote', (req, res) => {
 });
 
 //update a post (../api/posts/:id)
-//add back auth
-router.put('/:id', (req, res) => {
+router.put('/:id', auth,(req, res) => {
     Post.update(req.body, {
             where: {
                 id: req.params.id
@@ -121,8 +118,7 @@ router.put('/:id', (req, res) => {
 });
 
 //delete a post (../api/posts/:id)
-//add back auth
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
