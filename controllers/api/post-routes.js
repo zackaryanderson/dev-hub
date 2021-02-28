@@ -5,7 +5,6 @@ const sequelize = require('../../config/connection');
 
 //get all posts (../api/posts/)
 router.get('/', (req, res) => {
-    console.log('=======================');
     Post.findAll({
         //query config
         attributes: ['id', 'title', 'body', 'created_at', [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']],
