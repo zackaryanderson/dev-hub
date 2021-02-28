@@ -36,5 +36,23 @@ router.get('/', (req,res) => {
         });
 });
 
+//login in (.../login)
+router.get('/login', (req,res) => {
+    if (req.session.loggedIn) {
+        res.history.back();
+        return;
+    }
+    res.render('login');
+});
+
+//sign up page (.../signup)
+router.get('/signup', (req,res) => {
+    if (req.session.loggedIn) {
+        res.history.back();
+        return;
+    }
+    res.render('signup');
+});
+
 
 module.exports = router;
