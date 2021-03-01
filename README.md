@@ -19,14 +19,14 @@
   
   ## Installation
     
-  ### Follow these instructions to install the project
+  ### How to Install DevHub
   - To install DevHub clone the GitHub repository and install the required packages (bcrypt,sequelize,mysql2,express,express-sessions...)
   
 
   
   ## Usage
     
-  ### Follow these instructions to use the project
+  ### How to use DevHub
   - To use DevHub, go toour website at .... and make a profile to join the community!
   
 
