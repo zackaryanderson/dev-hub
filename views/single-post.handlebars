@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="card col-8 mb-3 mx-auto">
+    <div class="card-body">
+        <div class="card-title">
+            {{!-- have href link to individual post pages --}}
+            <a href="/post/{{post.id}}">{{post.title}}</a>
+        </div>
+        <div class="card-text">
+            <p>{{post.body}}</p>
+            <a class="blockquote-footer">by {{post.user.username}} on
+            {{format_date post.created_at}}</a>
+        </div>
+        <div class="footer"> 
+            <button id="like-button" class="btn btn-light">like</button>
+            {{post.vote_count}} {{format_plural "like" post.vote_count}}
+            |
+            <button id="comment-button" class="btn btn-light">comment</button>
+            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+        </div>
+    </div>
+</div>
+</div class="mx-auto col-9">
+{{> comments post.comments }}
+</div>

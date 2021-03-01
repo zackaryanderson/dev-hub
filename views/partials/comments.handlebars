@@ -1,0 +1,14 @@
+<div class="comments">
+    {{#each this}}
+    <div class="card col-7 mx-auto" style="margin-bottom:1vh">
+        <div class="card-body">
+            <div class="card-text">
+                <a href="/userpage/{{user.id}}">{{user.username}}</a> on {{format_date created_at}}
+            </div>
+            <div class="text">
+                {{comment_text}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

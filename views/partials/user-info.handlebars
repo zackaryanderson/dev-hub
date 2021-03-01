@@ -1,5 +1,7 @@
 
+{{#each user}}
 <li class="list-group-item">
-    <a href="/userpage/{{user.id}}">{{user.username}}</a>
+    <a href="/userpage/{{id}}">{{username}}</a>
     {{!-- <p>{{user.numFollowing}} {{format_plural "follower" user.numFollowing}} --}}
 </li>
+{{/each}}
