@@ -2,54 +2,67 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DevHub</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
-        <ul class="navbar-nav ml-auto text-center">
-          <li class="nav-item">
-            <a class="nav-link" href="/" data-bs-toggle="tab">Explore</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/codehelp" data-bs-toggle="tab">Code Help</a>
-          </li>
-        </ul>
+      <ul class="navbar-nav ml-auto text-center">
+        <li class="nav-item">
+          <a class="nav-link explore-tab" href="/" data-bs-toggle="tab">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link code-help-tab" href="/codehelp" data-bs-toggle="tab">Code Help</a>
+        </li>
+      </ul>
     </div>
     <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-        <a class="navbar-brand h1" style="margin-left: 15px" href="/">DevHub</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+      <a class="navbar-brand h1 brand-name" style="margin-left: 15px" href="/">DevHub</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
-        <ul class="navbar-nav mr-auto text-center">
-          <li class="nav-item">
-            <a class="nav-link" href="/following" data-bs-toggle="tab">Following</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/userpage" data-bs-toggle="tab">Home</a>
-          </li>
-        </ul>
-        {{#if loggedIn}}
-          <button id="logout" class="btn btn-no-style text-center mx-auto navbar-nav">logout</button>
-        {{else}}
-          <a href="/login" class="text-center mx-auto navbar-nav">login</a>
-        {{/if}}
+      <ul class="navbar-nav mr-auto text-center">
+        <li class="nav-item">
+          <a class="nav-link following-tab" href="/following" data-bs-toggle="tab">Following</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link home-tab" href="/userpage" data-bs-toggle="tab">Home</a>
+        </li>
+      </ul>
+      {{#if loggedIn}}
+      <button id="logout" class="btn btn-no-style text-center mx-auto navbar-nav">logout</button>
+      {{else}}
+      <a href="/login" class="text-center mx-auto navbar-nav">login</a>
+      {{/if}}
     </div>
-</nav>
-<div class="spacing-for-nav" style="margin-top: 10vh">
-</div>
-<div class="container">
-    {{{ body }}}
-</div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+  </nav>
+  <main>
+    <div class="spacing-for-nav" style="margin-top: 8.5vh">
+    </div>
+    <div class="container body">
+      {{{ body }}}
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="./javascript/script.js"></script>
 </body>
+
 </html>
