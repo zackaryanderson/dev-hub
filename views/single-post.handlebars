@@ -11,14 +11,28 @@
             {{format_date post.created_at}}</a>
         </div>
         <div class="footer"> 
-            <button id="like-button" class="btn btn-light">like</button>
             {{post.vote_count}} {{format_plural "like" post.vote_count}}
             |
-            <button id="comment-button" class="btn btn-light">comment</button>
             <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+            {{#if loggedIn}}
+            <textarea name="comment-body" class="col-12"></textarea>
+            <button id="like-button" class="btn btn-primary">like</button>
+            <button id="comment-button" class="btn btn-primary">comment</button>
+            {{/if}}
         </div>
     </div>
 </div>
-</div class="mx-auto col-9">
+{{!-- {{#if loggedIn}} --}}
+    {{!-- <div class="card col-7 mb-3 text-left">
+        <div class="card-title">
+            New Comment
+        </div>
+        <div class="card-body">
+            <textarea name="comment-body"></textarea>
+            <button type="submit" class="btn bg-primary text-light">add comment</button>
+        </div>
+    </div> --}}
+    {{!-- {{/if}} --}}
+<div class="mx-auto col-9">
 {{> comments post.comments }}
 </div>
