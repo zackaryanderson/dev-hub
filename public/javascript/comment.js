@@ -1,4 +1,4 @@
-$(".comment-form").on("submit", async function (event) {
+$(".comment-button").on("submit", async function (event) {
   event.preventDefault();
 
   const comment_text = $('textarea[name="comment-body"]').value.trim();
