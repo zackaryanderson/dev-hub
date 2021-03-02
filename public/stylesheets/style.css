@@ -1,0 +1,20 @@
+/* overarching rules */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Bangers', cursive; */
+}
+
+/* colors throughout project */
+:root{
+    --primary-color: #32373B;
+    --secondary-color: #4A5859;
+    --tertiary-color: #F4D6CC;
+    --fourth-color: #F4B860;
+    --fifth-color: #C83E4D;
+}
+
+/* nav {
+    background-color: var(--fourth-color);
+} */
