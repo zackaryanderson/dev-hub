@@ -7,8 +7,8 @@
         </div>
         <div class="card-text">
             <p>{{post.body}}</p>
-            <a class="blockquote-footer">by {{post.user.username}} on
-            {{format_date post.created_at}}</a>
+            <p class="blockquote-footer">by <a href="/userpage/{{post.user.id}}">{{post.user.username}}</a> on
+            {{format_date post.created_at}}</p>
         </div>
         <div class="footer"> 
             {{post.vote_count}} {{format_plural "like" post.vote_count}}
