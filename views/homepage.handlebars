@@ -1,6 +1,6 @@
 <div class="row">
-    <h2 class="col-12 text-center" style="margin-bottom:2vh">Explore</h2>
-    <div class="card text-center" style="padding:0">
+    {{!-- <h2 class="col-12 text-center header-spacing brand-name">Explore</h2> --}}
+    <div class="card text-center popular-pane dissapear col-2" style="padding:0">
         <div class="card-body">
             <p class="card-text">Popular</p>
             <ul id = "user-ctn" class="list-group list-group-flush">
@@ -8,7 +8,18 @@
             </ul>
         </div>
     </div>
-    <div class="mx-auto col-10">
+    <div class="mx-auto col-md-10 col-12" style="margin-left: 40px; margin-top:2vh">
+        <div class="card" style="margin-bottom: 1vh">
+            <div class="card-body">
+                <form class="form-inline"> {{!-- <p>New Post</p> --}} 
+                    <input name="post-title" class="col-10 form-control" placeholder="Create Post" href="/newpost"></input>
+                    {{!-- <textarea name="post-body" class="col-12 form-control" placeholder="Post Body" style="margin-top: 5px"></textarea> --}}
+                    <a id="new-post-btn" class="btn col-1 mb-2" style="margin-top: 5px; margin-left: 10px" href="/newpost">
+                        <span class="oi oi-pencil"></span>
+                    </a>
+                </form>
+            </div>
+        </div>
         {{#each posts as |post|}}
         {{> post-info post}}
         {{/each}}
@@ -36,7 +47,11 @@
             </div>
         </div>
     </div> --}}
+<<<<<<< HEAD
 </div>
 
 <script src="../public/javascript/tab-functionality.js"></script>
 <script src="../public/javascript/popular.js"></script>
+=======
+</div>
+>>>>>>> e3cbe3d1bf3f1192ca5af2a91a83a416811a2237

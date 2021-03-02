@@ -28,7 +28,7 @@ Post.init(
             allowNull: false,
         },
         body: {
-            type: DataTypes.STRING(240),
+            type: DataTypes.STRING(500),
             allowNull: false
         }
     },

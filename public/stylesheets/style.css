@@ -1,0 +1,83 @@
+/* overarching rules */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Bangers', cursive; */
+}
+
+/* colors throughout project */
+:root{
+    --primary-color: #0A2463;
+    --secondary-color: #FB3640;
+    --tertiary-color: #605F5E;
+    --fourth-color: #247BA0;
+    --fifth-color: #E2E2E2;
+}
+
+.brand-name {
+    font-family: 'DotGothic16', sans-serif;
+    font-weight: bold;
+    color:black;
+}
+
+nav {
+    background-color: rgba(255,255,255,0.8); 
+}
+
+nav ul li a {
+    color: grey;
+}
+
+main {
+    background-color: rgba(240,240,240);
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+.popular-pane {
+    max-height:50vh;
+    position: sticky;
+    top: 10%;
+    /* margin-left: -50px; */
+}
+
+.popular-title {
+    border-bottom: solid var(--secondary-color) 1px;
+    width: 100%;
+}
+
+div a {
+    color: var(--secondary-color);
+}
+
+div a:hover{
+    text-decoration: none;
+    color: var(--fourth-color);
+}
+
+div .btn {
+    background-color: var(--fifth-color);
+}
+div .btn:hover{
+    background-color: var(--fourth-color);
+}
+
+div .card {
+    box-shadow: 2px 2.5px var(--fifth-color);
+    border: solid 1px var(--primary-color);
+}
+
+.active {
+    color: var(--secondary-color);
+}
+
+.header-spacing {
+    margin:2.5vh 0;
+}
+
+@media screen and (max-width: 800px){
+    .dissapear {
+        display: none;
+    }
+}

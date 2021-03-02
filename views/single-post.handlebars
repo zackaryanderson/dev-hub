@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="card col-8 mb-3 mx-auto">
+    <div class="card col-12 col-md-9 mb-3 mx-auto">
     <div class="card-body">
         <div class="card-title">
             {{!-- have href link to individual post pages --}}
@@ -7,18 +7,21 @@
         </div>
         <div class="card-text">
             <p>{{post.body}}</p>
-            <a class="blockquote-footer">by {{post.user.username}} on
-            {{format_date post.created_at}}</a>
+            <p class="blockquote-footer">by <a href="/userpage/{{post.user.id}}">{{post.user.username}}</a> on
+            {{format_date post.created_at}}</p>
         </div>
         <div class="footer"> 
-            <button id="like-button" class="btn btn-light">like</button>
             {{post.vote_count}} {{format_plural "like" post.vote_count}}
             |
-            <button id="comment-button" class="btn btn-light">comment</button>
             <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+            {{#if loggedIn}}
+            <textarea name="comment-body" class="col-12"></textarea>
+            <button id="like-button" class="btn btn-primary">like</button>
+            <button id="comment-button" class="btn btn-primary">comment</button>
+            {{/if}}
         </div>
     </div>
 </div>
-</div class="mx-auto col-9">
+<div class="mx-auto col-12 col-md-8 mb-3">
 {{> comments post.comments }}
 </div>

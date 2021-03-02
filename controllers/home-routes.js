@@ -20,7 +20,7 @@ router.get('/', (req,res) => {
                 include: [
                     {
                         model: User,
-                        attributes: ['username']
+                        attributes: ['username','id']
                     }
                 ]
             }
@@ -28,6 +28,7 @@ router.get('/', (req,res) => {
     })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
+            // const loc = req.session;
             res.render('homepage', { posts, loggedIn: req.session.loggedIn });
         })
         .catch(err => {
@@ -60,7 +61,7 @@ router.get('/post/:id', (req,res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username','id']
             }
         ]
     })
