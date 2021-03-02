@@ -13,6 +13,8 @@ const activeTab = () => {
         case '/userpage':
             document.querySelector('.home-tab').classList.add("active");
             break;
+        default:
+            break;
     }
 }
 

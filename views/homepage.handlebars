@@ -1,6 +1,6 @@
 <div class="row">
-    <h2 class="col-12 text-center header-spacing brand-name">Explore</h2>
-    <div class="card text-center popular-pane" style="padding:0">
+    {{!-- <h2 class="col-12 text-center header-spacing brand-name">Explore</h2> --}}
+    <div class="card text-center popular-pane dissapear col-2" style="padding:0">
         <div class="card-body">
             <p class="card-text popular-title">Popular</p>
             <ul class="list-group list-group-flush">
@@ -8,7 +8,16 @@
             </ul>
         </div>
     </div>
-    <div class="mx-auto col-10">
+    <div class="mx-auto col-md-10 col-12" style="margin-left: 40px; margin-top:2vh">
+        {{!-- this needs to be appended to page when new post button is clicked and user is logged in --}}
+        {{!-- <div class="card" style="margin-bottom: 1vh">
+            <div class="card-body">
+                <p>New Post</p>
+                <input name="post-title" class="col-12 form-control" placeholder="Post Title"></textarea>
+                <textarea name="post-body" class="col-12 form-control" placeholder="Post Body" style="margin-top: 5px"></textarea>
+                <button id="new-post-btn" class="btn" style="margin-top: 5px">Post</button>
+            </div>
+        </div> --}}
         {{#each posts as |post|}}
         {{> post-info post}}
         {{/each}}
