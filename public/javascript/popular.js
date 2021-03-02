@@ -25,6 +25,9 @@ async function populateUsers() {
       $("#user-ctn").append(userLi);
     }
   } else {
+    console.log("this is a test");
     alert(response.statusText);
   }
 }
+
+populateUsers();

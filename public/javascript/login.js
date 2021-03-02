@@ -1,15 +1,15 @@
-//function that will run on submit of the login form, this will send the username and password and check if they exist, if they do they are signed in
+//function that will run on submit of the login form, this will send the email and password and check if they exist, if they do they are signed in
 $(".login-form").on("submit", async function (event) {
   event.preventDefault();
 
-  const username = $("#username-login").value.trim();
+  const email = $("#email-login").value.trim();
   const password = $("#password-login").value.trim();
 
-  if (username && password) {
+  if (email && password.length > 8) {
     const response = await fetch("/api/users/login", {
       method: "post",
       body: JSON.stringify({
-        username,
+        email,
         password,
       }),
       headers: { "Content-Type": "application/json" },
