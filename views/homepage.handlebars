@@ -9,15 +9,17 @@
         </div>
     </div>
     <div class="mx-auto col-md-10 col-12" style="margin-left: 40px; margin-top:2vh">
-        {{!-- this needs to be appended to page when new post button is clicked and user is logged in --}}
-        {{!-- <div class="card" style="margin-bottom: 1vh">
+        <div class="card" style="margin-bottom: 1vh">
             <div class="card-body">
-                <p>New Post</p>
-                <input name="post-title" class="col-12 form-control" placeholder="Post Title"></textarea>
-                <textarea name="post-body" class="col-12 form-control" placeholder="Post Body" style="margin-top: 5px"></textarea>
-                <button id="new-post-btn" class="btn" style="margin-top: 5px">Post</button>
+                <form class="form-inline"> {{!-- <p>New Post</p> --}} 
+                    <input name="post-title" class="col-10 form-control" placeholder="Create Post" href="/newpost"></input>
+                    {{!-- <textarea name="post-body" class="col-12 form-control" placeholder="Post Body" style="margin-top: 5px"></textarea> --}}
+                    <a id="new-post-btn" class="btn col-1 mb-2" style="margin-top: 5px; margin-left: 10px" href="/newpost">
+                        <span class="oi oi-pencil"></span>
+                    </a>
+                </form>
             </div>
-        </div> --}}
+        </div>
         {{#each posts as |post|}}
         {{> post-info post}}
         {{/each}}
