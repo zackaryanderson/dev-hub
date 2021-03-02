@@ -22,7 +22,7 @@
 }
 
 nav {
-    background-color: rgba(255,255,255,0.8); 
+    background-color: rgba(255,255,255,0.9); 
 }
 
 nav ul li a {
@@ -31,7 +31,8 @@ nav ul li a {
 
 main {
     /* background-color: rgba(240,240,240); */
-    background-color: #0a246336;
+    /* background-color: #0a246336; */
+    /* background-image: linear-gradient(to right, #FFBA49 50%,#20A39E 50%); */
     min-height: 100vh;
     background-attachment: fixed;
 }
