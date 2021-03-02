@@ -8,13 +8,34 @@
 
 /* colors throughout project */
 :root{
-    --primary-color: #32373B;
-    --secondary-color: #4A5859;
-    --tertiary-color: #F4D6CC;
-    --fourth-color: #F4B860;
-    --fifth-color: #C83E4D;
+    --primary-color: #0A2463;
+    --secondary-color: #FB3640;
+    --tertiary-color: #605F5E;
+    --fourth-color: #247BA0;
+    --fifth-color: #E2E2E2;
 }
 
-/* nav {
+nav {
+    background-color: var(--fifth-color);
+}
+
+div a {
+    color: var(--secondary-color);
+}
+
+div a:hover{
+    text-decoration: none;
+    color: var(--fourth-color);
+}
+
+div .btn {
+    background-color: var(--fifth-color);
+}
+div .btn:hover{
     background-color: var(--fourth-color);
-} */
+}
+
+div .card {
+    box-shadow: 2px 2.5px var(--fifth-color);
+    border: solid 1px var(--primary-color);
+}

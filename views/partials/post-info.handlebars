@@ -15,15 +15,15 @@
             |
             <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             <div class="col-12"></div>
-            <button id="like-button" class="btn btn-light">like</button>
-            <button id="comment-button" class="btn btn-light">comment</button>
+            <button id="like-button" class="btn">like</button>
+            <button id="comment-button" class="btn">comment</button>
             {{else}}
             {{vote_count}} {{format_plural "like" vote_count}}
             |
             <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             <div class="col-12"></div>
-            <a id="like-button" class="btn btn-light" href="/login" target="_blank">like</a>
-            <a id="comment-button" class="btn btn-light" href="/login" target="_blank">comment</a>
+            <a id="like-button" class="btn" href="/login" target="_blank">like</a>
+            <a id="comment-button" class="btn" href="/login" target="_blank">comment</a>
             {{/if}}
         </div>
     </div>
