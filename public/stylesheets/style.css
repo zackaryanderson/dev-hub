@@ -30,7 +30,8 @@ nav ul li a {
 }
 
 main {
-    background-color: rgba(240,240,240);
+    /* background-color: rgba(240,240,240); */
+    background-color: #0a246336;
     min-height: 100vh;
     background-attachment: fixed;
 }
@@ -64,7 +65,7 @@ div .btn:hover{
 }
 
 div .card {
-    box-shadow: 2px 2.5px var(--fifth-color);
+    /* box-shadow: 2px 2.5px var(--fifth-color); */
     border: solid 1px var(--primary-color);
 }
 
@@ -74,6 +75,24 @@ div .card {
 
 .header-spacing {
     margin:2.5vh 0;
+}
+
+.new-post-pos {
+    position: absolute;
+    z-index: 99999999;
+    background-color: rgba(255,255,255,0.8);
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    padding-top: 10vh;
+}
+
+.colorful {
+    background-color: #247ba0db;
+}
+
+.modal-card {
+    border-radius: 20px;
 }
 
 @media screen and (max-width: 800px){

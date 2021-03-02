@@ -12,11 +12,11 @@
         <div class="card" style="margin-bottom: 1vh">
             <div class="card-body">
                 <form class="form-inline"> {{!-- <p>New Post</p> --}} 
-                    <input name="post-title" class="col-10 form-control" placeholder="Create Post" href="/newpost"></input>
+                    <button class="col-10 form-control replace text-left">Create Post</button>
                     {{!-- <textarea name="post-body" class="col-12 form-control" placeholder="Post Body" style="margin-top: 5px"></textarea> --}}
-                    <a id="new-post-btn" class="btn col-1 mb-2" style="margin-top: 5px; margin-left: 10px" href="/newpost">
+                    <button id="new-post-btn" class="btn col-1 mb-2" style="margin-top: 5px; margin-left: 10px">
                         <span class="oi oi-pencil"></span>
-                    </a>
+                    </button>
                 </form>
             </div>
         </div>
@@ -48,3 +48,4 @@
         </div>
     </div> --}}
 </div>
+<script src="./javascript/post-redirect.js"></script>
