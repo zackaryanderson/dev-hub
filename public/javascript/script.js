@@ -4,7 +4,7 @@ const activeTab = () => {
         case '/':
             document.querySelector('.explore-tab').classList.add("active");
             break;
-        case '/codeHelp':
+        case '/codehelp':
             document.querySelector('.code-help-tab').classList.add("active");
             break;
         case '/following':

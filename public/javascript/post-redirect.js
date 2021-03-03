@@ -60,7 +60,21 @@ const redirect = (event) => {
     //create submission button
     const newPostSubBtn = document.createElement("button");
     newPostSubBtn.classList.add("btn");
-    newPostSubBtn.setAttribute('name','new-post-submit');
+
+    //change name of button depending on window location
+    const btnId = () => {
+        let loc = window.location.pathname;
+        switch(loc) {
+            case '/':
+                newPostSubBtn.setAttribute('name','new-post-submit-codehelpfalse');
+                break;
+            case '/codehelp':
+                newPostSubBtn.setAttribute('name','new-post-submit-codehelptrue');
+                break;
+        }
+    }
+    btnId();
+
     newPostSubBtn.textContent = "Submit";
 
     //append title and input to form groups

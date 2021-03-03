@@ -1,0 +1,20 @@
+<div class="row">
+    {{!-- <h2 class="col-12 text-center header-spacing brand-name">Explore</h2> --}}
+    <div class="mx-auto col-md-10 col-12" style="margin-left: 40px; margin-top:2vh">
+        <div class="card" style="margin-bottom: 1vh">
+            <div class="card-body">
+                <form class="form-inline"> {{!-- <p>New Post</p> --}} 
+                    <button class="col-10 form-control replace text-left">Create Post</button>
+                    {{!-- <textarea name="post-body" class="col-12 form-control" placeholder="Post Body" style="margin-top: 5px"></textarea> --}}
+                    <button id="new-post-btn" class="btn col-1 mb-2" style="margin-top: 5px; margin-left: 10px">
+                        <span class="oi oi-pencil"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        {{#each filteredPosts as |post|}}
+        {{> post-info post}}
+        {{/each}}
+    </div>
+</div>
+<script src="./javascript/post-redirect.js"></script>

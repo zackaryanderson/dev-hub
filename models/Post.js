@@ -31,9 +31,9 @@ Post.init(
             type: DataTypes.STRING(500),
             allowNull: false
         },
-        codeHelp: {
+        code_help: {
             type: DataTypes.BOOLEAN,
-            allowNull: true
+            allowNull: false
         }
     },
     {

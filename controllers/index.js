@@ -2,10 +2,12 @@ const router = require('express').Router();
 const apiRoutes = require('./api');
 const homeRoutes = require('./home-routes.js');
 const userpageRoutes = require('./userpage-routes.js');
+const codehelpRoutes = require('./codehelp-routes.js');
 
 router.use('/', homeRoutes);
 router.use('/userpage', userpageRoutes);
 router.use('/api', apiRoutes);
+router.use('/codehelp', codehelpRoutes);
 
 router.use((req,res) => {
     res.status(404).end();
