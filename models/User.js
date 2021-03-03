@@ -48,15 +48,6 @@ User.init(
             type: DataTypes.INTEGER,
             allowNull: true,
         },
-        // other users that this user follows
-        following: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        }
     },
     {
         hooks: {

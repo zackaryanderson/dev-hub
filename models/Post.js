@@ -30,6 +30,10 @@ Post.init(
         body: {
             type: DataTypes.STRING(500),
             allowNull: false
+        },
+        codeHelp: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
         }
     },
     {
