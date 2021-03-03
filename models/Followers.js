@@ -10,7 +10,6 @@ Followers.init(
             primaryKey: true,
             autoIncrement: true
         },
-        //what goes here??
         follower_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -19,7 +18,7 @@ Followers.init(
                 key: 'id'
             }
         },
-        beingFollowed_id: {
+        followee_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {

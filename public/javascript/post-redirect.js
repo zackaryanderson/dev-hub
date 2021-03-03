@@ -19,9 +19,22 @@ const redirect = (event) => {
     const escBtn = document.createElement("a");
     escBtn.classList.add("btn");
     escBtn.classList.add("bg-danger");
-    escBtn.classList.add("align-right");
-    escBtn.setAttribute('href','/');
+    escBtn.classList.add("return-btn");
     escBtn.textContent = "x";
+    //change relocation destination of button depending on window location
+    const escBtnId = () => {
+        let loc = window.location.pathname;
+        switch(loc) {
+            case '/':
+                escBtn.setAttribute('href','/');
+                break;
+            case '/codehelp':
+                escBtn.setAttribute('href','/codehelp');
+                break;
+        }
+    }
+    escBtnId();
+
     //create card-body div
     const newPostCardBody = document.createElement("div");
     newPostCardBody.classList.add("card-body");
@@ -96,6 +109,5 @@ const redirect = (event) => {
     //append post container to document body
     document.querySelector('#modal-placement').prepend(newPostBox);
 }
-
 
 document.querySelector('.replace').addEventListener('click',redirect);
