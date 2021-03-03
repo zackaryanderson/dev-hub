@@ -14,7 +14,6 @@ async function populateUsers() {
       data = responseData;
       //console.log(responseData);
       sortedResponse = responseData.sort((a, b) => b.following - a.following);
-      console.log(sortedResponse);
       for (i = 0; i < sortedResponse.length; i++) {
         var userLi = document.createElement("li");
         userLi.innerHTML = `
