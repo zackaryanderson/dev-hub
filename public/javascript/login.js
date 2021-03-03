@@ -1,5 +1,5 @@
 //function that will run on submit of the login form, this will send the email and password and check if they exist, if they do they are signed in
-$(".login-form").on("submit", async function (event) {
+async function loginFormHandler(event) {
   event.preventDefault();
 
   const email = $("#email-login").value.trim();
@@ -21,10 +21,10 @@ $(".login-form").on("submit", async function (event) {
       alert(response.statusText);
     }
   }
-});
+}
 
 //function that will run on submit of the signup form, this will send the username and password and create them in the database
-$(".signup-form").on("submit", async function (event) {
+async function signupFormHandler(event) {
   event.preventDefault();
 
   const username = $("#username-signup").value.trim();
@@ -45,4 +45,12 @@ $(".signup-form").on("submit", async function (event) {
       alert(response.statusText);
     }
   }
-});
+}
+
+document
+  .querySelector(".login-form")
+  .addEventListener("submit", loginFormHandler);
+
+document
+  .querySelector(".signup-form")
+  .addEventListener("submit", signupFormHandler);

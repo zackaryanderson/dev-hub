@@ -1,5 +1,5 @@
 // when logout button is clicked the session will be destroyed and user will be rerouted to homepage
-$("#logout").on("click", async function () {
+async function logout() {
   const response = await fetch("/api/users/logout", {
     method: "post",
     headers: { "Content-Type": "application/json" },
@@ -10,4 +10,6 @@ $("#logout").on("click", async function () {
   } else {
     alert(response.statusText);
   }
-});
+}
+
+document.querySelector("#logout").addEventListener("click", logout);

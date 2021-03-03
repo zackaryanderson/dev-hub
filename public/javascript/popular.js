@@ -3,21 +3,21 @@ async function populateUsers() {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-    }
+    },
   });
 
   if (response.ok) {
     // sort array in order of most followers
     let data = {};
     let sortedResponse = [];
-    response.json().then(responseData => {
+    response.json().then((responseData) => {
       data = responseData;
       //console.log(responseData);
       sortedResponse = responseData.sort((a, b) => b.following - a.following);
       console.log(sortedResponse);
-    for (i = 0; i < sortedResponse.length; i++) {
-      var userLi = document.createElement("li");
-      userLi.innerHTML = `
+      for (i = 0; i < sortedResponse.length; i++) {
+        var userLi = document.createElement("li");
+        userLi.innerHTML = `
       <article class="user">
         <div class="username">
             <div">${sortedResponse[i].username}</div>
@@ -27,8 +27,8 @@ async function populateUsers() {
         </div>
       </article>
       `;
-      $("#user-ctn").append(userLi);
-    }
+        $("#user-ctn").append(userLi);
+      }
     });
   } else {
     console.log("this is a test");

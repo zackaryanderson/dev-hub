@@ -1,4 +1,4 @@
-$(".edit-post-form").on("submit", async function (event) {
+async function editFormHandler(event) {
   event.preventDefault();
 
   const title = $('input[name="post-title"]').value.trim();
@@ -22,4 +22,8 @@ $(".edit-post-form").on("submit", async function (event) {
   } else {
     alert(response.statusText);
   }
-});
+}
+
+document
+  .querySelector(".edit-post-form")
+  .addEventListener("submit", editFormHandler);
