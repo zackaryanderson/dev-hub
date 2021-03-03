@@ -3,13 +3,18 @@ async function populateUsers() {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-    },
+    }
   });
 
   if (response.ok) {
-    console.log(response);
     // sort array in order of most followers
-    const sortedResponse = response.sort((a, b) => b.following - a.following);
+    let data = {};
+    let sortedResponse = [];
+    response.json().then(responseData => {
+      data = responseData;
+      //console.log(responseData);
+      sortedResponse = responseData.sort((a, b) => b.following - a.following);
+      console.log(sortedResponse);
     for (i = 0; i < sortedResponse.length; i++) {
       var userLi = document.createElement("li");
       userLi.innerHTML = `
@@ -24,6 +29,7 @@ async function populateUsers() {
       `;
       $("#user-ctn").append(userLi);
     }
+    });
   } else {
     console.log("this is a test");
     alert(response.statusText);
