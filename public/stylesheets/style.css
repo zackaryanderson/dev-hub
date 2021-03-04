@@ -29,10 +29,6 @@ nav ul li a {
     color: grey;
 }
 
-.navbar-toggler {
-    background-image: var(--tertiary-color);
-}
-
 li {
     list-style: none;
 }
@@ -117,7 +113,10 @@ div .card {
     font-weight: bold;
     transition: color .1s;
     margin-left: 16px;
-  }
+}
+
+.small-margin {
+    margin-top: 2vh;
 
 @media screen and (max-width: 800px){
     .dissapear {
