@@ -21,9 +21,6 @@ async function populateUsers() {
         <div class="username">
             <div">${sortedResponse[i].username}</div>
         </div>
-        <div class="followers">
-        ${sortedResponse[i].following}
-        </div>
       </article>
       `;
         $("#user-ctn").append(userLi);
