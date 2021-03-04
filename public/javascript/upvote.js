@@ -2,9 +2,19 @@ async function upvoteClickHandler(event) {
   console.log("test");
   event.preventDefault();
 
-  const id = window.location.toString().split("/")[
-    window.location.toString().split("/").length - 1
-  ];
+  // const id = window.location.toString().split("/")[
+  //   window.location.toString().split("/").length - 1
+  // ];
+  let id = '';
+
+  if (window.location.pathname === '/') {
+    id = document.querySelector(".card-title").id;
+  } else {
+    id = window.location.toString().split("/")[
+      window.location.toString().split("/").length - 1
+    ];
+  }
+
   const response = await fetch("/api/posts/upvote", {
     method: "PUT",
     body: JSON.stringify({
