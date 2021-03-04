@@ -1,4 +1,4 @@
-$(".comment-button").on("submit", async function (event) {
+async function commentFormHandler(event) {
   event.preventDefault();
 
   const comment_text = $('textarea[name="comment-body"]').value.trim();
@@ -25,4 +25,8 @@ $(".comment-button").on("submit", async function (event) {
       alert(response.statusText);
     }
   }
-});
+}
+
+document
+  .querySelector(".comment-form")
+  .addEventListener("submit", commentFormHandler);

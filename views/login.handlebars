@@ -1,7 +1,7 @@
 <div class="row">
     <div class="card mx-auto col-5" style="margin-top: 2vh">
         <div class="card-body">
-            <form>
+            <form class="login-form">
                 <h3 class="header-spacing brand-name">Login</h3>
                 <div class="form-group">
                     <label for="email-login">Email:</label>
@@ -9,15 +9,17 @@
                 </div>
                 <div class="form-group">
                     <label for="password-login">Password:</label>
-                    <input type="password" id="Password-login" class="form-control" placeholder="Enter Password" />
+                    <input type="password" id="password-login" class="form-control" placeholder="Enter Password" />
                     <small class="form-text text-muted">Password must be 8 characters long</small>
                 </div>
-                <button class="btn" type="submit">Login</button>
-                <div style="margin-top:4vh">
+                <div>                
+                    <button class="btn" type="submit">Login</button>
+                </div>
+            </form>
+            <div style="margin-top:4vh">
                     <p>New User?</p>
                     <a class="btn" type="submit" href="/signup">Sign Up</a>
                 </div>
-            </form>
         </div>
     </div>
 </div>

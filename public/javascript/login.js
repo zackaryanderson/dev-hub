@@ -1,11 +1,11 @@
 //function that will run on submit of the login form, this will send the email and password and check if they exist, if they do they are signed in
-$(".login-form").on("submit", async function (event) {
+async function loginFormHandler(event) {
   event.preventDefault();
 
-  const email = $("#email-login").value.trim();
-  const password = $("#password-login").value.trim();
+  const email = document.getElementById("email-login").value.trim();
+  const password = document.getElementById("password-login").value.trim();
 
-  if (email && password.length > 8) {
+  if (email && password.length >= 8) {
     const response = await fetch("/api/users/login", {
       method: "post",
       body: JSON.stringify({
@@ -16,15 +16,15 @@ $(".login-form").on("submit", async function (event) {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace("/");
     } else {
       alert(response.statusText);
     }
   }
-});
+}
 
 //function that will run on submit of the signup form, this will send the username and password and create them in the database
-$(".signup-form").on("submit", async function (event) {
+async function signupFormHandler(event) {
   event.preventDefault();
 
   const username = $("#username-signup").value.trim();
@@ -45,4 +45,12 @@ $(".signup-form").on("submit", async function (event) {
       alert(response.statusText);
     }
   }
-});
+}
+
+document
+  .querySelector(".login-form")
+  .addEventListener("submit", loginFormHandler);
+
+// document
+//   .querySelector(".signup-form")
+//   .addEventListener("submit", signupFormHandler);
