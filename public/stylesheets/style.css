@@ -123,4 +123,7 @@ div .card {
     .dissapear {
         display: none;
     }
+    .small-margin {
+        margin-top: 4vh;
+    }
 }
