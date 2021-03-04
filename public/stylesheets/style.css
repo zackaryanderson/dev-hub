@@ -64,6 +64,8 @@ div a:hover{
 
 div .btn {
     background-color: var(--fifth-color);
+    border-radius: 12px;
+    margin-top: 5px;
 }
 div .btn:hover{
     background-color: var(--fourth-color);

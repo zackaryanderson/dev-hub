@@ -10,12 +10,12 @@
             {{format_date created_at}}</p>
         </div>
         <div class="footer"> 
-            {{vote_count}} {{format_plural "like" vote_count}}
+            {{vote_count}} {{format_plural "like" vote_count}}  
             |
-            <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+            <a href="/post/{{id}}">  {{comments.length}} {{format_plural "comment" comments.length}}</a>
             <div class="col-12"></div>
-            <button class="btn upvote-btn">Like</button>
-            <a id="comment-button" class="btn" href="/post/{{id}}">Comment</a>
+            <button class="btn upvote-btn"><span class="oi oi-star"></span> Like</button>
+            <a id="comment-button" class="btn" href="/post/{{id}}"><span class="oi oi-code"></span> Comment</a>
         </div>
     </div>
 </div>
