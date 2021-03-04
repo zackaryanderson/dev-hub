@@ -7,7 +7,7 @@ async function upvoteClickHandler(event) {
   // ];
   let id = '';
 
-  if (window.location.pathname === '/') {
+  if (window.location.pathname === '/' || window.location.pathname === '/codehelp') {
     id = document.querySelector(".card-title").id;
   } else {
     id = window.location.toString().split("/")[
