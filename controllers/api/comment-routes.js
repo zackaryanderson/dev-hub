@@ -25,15 +25,13 @@ router.get('/', (req, res) => {
 });
 
 //post a comment 
-//add back auth
-//change user_id back to req.session.user_id
-router.post('/', (req, res) => {
+router.post('/', auth,(req, res) => {
     // check the session
     if (req.session) {
         Comment.create({
             comment_text: req.body.comment_text,
             post_id: req.body.post_id,
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         })
             .then(dbCommentData => res.json(dbCommentData))
             .catch(err => {
@@ -44,8 +42,7 @@ router.post('/', (req, res) => {
 });
 
 //update a comment
-//add back auth
-router.put('/:id', (req,res) => {
+router.put('/:id', auth, (req,res) => {
     Comment.update(req.body, {
         where: {
             id: req.params.id
@@ -66,8 +63,7 @@ router.put('/:id', (req,res) => {
 
 
 //delete a comment
-//add back auth
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, (req, res) => {
     Comment.destroy({
         where: {
             id: req.params.id

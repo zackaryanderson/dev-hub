@@ -71,11 +71,9 @@ router.get('/:id', (req, res) => {
 });
 
 //create a post (../api/posts/)
-//change to user_id: req.session.user_id
-//add back auth
-router.post('/',(req, res) => {
+router.post('/',auth, (req, res) => {
     Post.create({
-        user_id: req.body.user_id,
+        user_id: req.session.user_id,
         title: req.body.title,
         body: req.body.body,
         code_help: req.body.code_help
