@@ -13,9 +13,9 @@
         <div class="card" style="margin-bottom: 1vh">
             <div class="card-body">
                 <form class="form-inline"> {{!-- <p>New Post</p> --}} 
-                    <button class="col-10 form-control replace text-left">Create Post</button>
+                    <button class="col-md-10 col-9 form-control replace text-left">Create Post</button>
                     {{!-- <textarea name="post-body" class="col-12 form-control" placeholder="Post Body" style="margin-top: 5px"></textarea> --}}
-                    <button id="new-post-btn" class="btn col-1 mb-2" style="margin-top: 5px; margin-left: 10px">
+                    <button id="new-post-btn" class="btn col-md-1 col-2 mb-2" style="margin-top: 5px; margin-left: 10px">
                         <span class="oi oi-pencil"></span>
                     </button>
                 </form>
@@ -27,7 +27,8 @@
         {{/each}}
     </div>
 </div>
+{{#if loggedIn}}
 <script src="/javascript/post-redirect.js"></script>
+{{/if}}
 <script src="/javascript/popular.js"></script>
 <script src="/javascript/upvote.js"></script>
-{{!-- <script src="./javascript/add-post.js"></script> --}}
