@@ -84,7 +84,7 @@ router.get('/post/:id', (req, res) => {
 //login in (.../login)
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.history.back();
+        res.redirect('/');
         return;
     }
     res.render('login');
@@ -93,7 +93,7 @@ router.get('/login', (req, res) => {
 //sign up page (.../signup)
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
-        res.history.back();
+        res.redirect('/');
         return;
     }
     res.render('signup');

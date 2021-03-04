@@ -14,17 +14,20 @@ async function populateUsers() {
       data = responseData;
       //console.log(responseData);
       sortedResponse = responseData.sort((a, b) => b.following - a.following);
-      for (i = 0; i < sortedResponse.length; i++) {
+      //restrict to 8 users on popular page
+      let size = '';
+      if (sortedResponse > 8) {
+        size = 8;
+      } else {
+        size = sortedResponse.length;
+      }
+
+      for (i = 0; i < size; i++) {
         var userLi = document.createElement("li");
         userLi.innerHTML = `
-      <article class="user">
-        <div class="username">
-            <div">${sortedResponse[i].username}</div>
-        </div>
-        <div class="followers">
-        ${sortedResponse[i].following}
-        </div>
-      </article>
+        <li class="list-group-item">
+          <a href="userpage/${sortedResponse[i].id}">${sortedResponse[i].username}</a>
+        </li>
       `;
         $("#user-ctn").append(userLi);
       }

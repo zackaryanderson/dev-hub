@@ -23,34 +23,9 @@ async function loginFormHandler(event) {
   }
 }
 
-//function that will run on submit of the signup form, this will send the username and password and create them in the database
-async function signupFormHandler(event) {
-  event.preventDefault();
 
-  const username = $("#username-signup").value.trim();
-  const password = $("#password-signup").value.trim();
-
-  if (username && password) {
-    await fetch("/api/users", {
-      method: "post",
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-      headers: { "Content-Type": "application/json" },
-    });
-    if (response.ok) {
-      console.log("success");
-    } else {
-      alert(response.statusText);
-    }
-  }
-}
 
 document
   .querySelector(".login-form")
   .addEventListener("submit", loginFormHandler);
 
-// document
-//   .querySelector(".signup-form")
-//   .addEventListener("submit", signupFormHandler);

@@ -1,22 +1,27 @@
 <div class="row">
-    <div class="mx-auto col-5">
-    <form class="signup-form">
-        <h3 style="margin-bottom:2vh">Sign Up</h3>
-        <div class="form-group"> 
-            <label for="email-login">Email:</label>
-            <input type="text" id="email-login" class="form-control" placeholder="Enter Email"/>
+    <div class="card mx-auto col-5" style="margin-top: 2vh">
+        <div class="card-body">
+            <form class="signup-form">
+                <h3 class="header-spacing brand-name">Sign Up</h3>
+                <div class="form-group">
+                    <label for="email-signup">Email:</label>
+                    <input type="text" id="email-signup" class="form-control" placeholder="Enter Email" />
+                </div>
+                <div class="form-group">
+                    <label for="username-signup">Username:</label>
+                    <input type="text" id="username-signup" class="form-control" placeholder="Enter Username" />
+                </div>
+                <div class="form-group">
+                    <label for="password-signup">Password:</label>
+                    <input type="password" id="password-signup" class="form-control" placeholder="Enter Password" />
+                    <small class="form-text text-muted">Password must be 8 characters long</small>
+                </div>
+                <div>
+                    <button class="btn" type="submit">Sign Up</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group"> 
-            <label for="username-login">Username:</label>
-            <input type="text" id="username-login" class="form-control" placeholder="Enter Username"/>
-        </div>
-        <div class="form-group">
-            <label for="password-login">Password:</label>
-            <input type="password" id="Password-login" class="form-control" placeholder="Enter Password"/>
-            <small class="form-text text-muted">Password must be 8 characters long</small>
-        </div>
-        <button class="btn bg-primary text-light" type="submit">Sign Up</button>
-    </form>
     </div>
 </div>
-<script src="../public/javascript/login.js"></script>
+
+<script src="./javascript/signup.js"></script>
