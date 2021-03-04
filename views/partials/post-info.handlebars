@@ -1,6 +1,6 @@
 <div class="card col-12 mb-3 mx-auto">
-    <div class="card-body">
-        <div class="card-title" id="{{id}}">
+    <div class="card-body" id="{{id}}">
+        <div class="card-title">
             {{!-- have href link to individual post pages --}}
             <a href="/post/{{id}}">{{title}}</a>
         </div>
@@ -14,7 +14,7 @@
             |
             <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             <div class="col-12"></div>
-            <button id="upvote-btn" class="btn">Like</button>
+            <button class="btn upvote-btn">Like</button>
             <a id="comment-button" class="btn" href="/post/{{id}}">Comment</a>
         </div>
     </div>

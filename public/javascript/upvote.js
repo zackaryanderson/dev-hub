@@ -1,14 +1,12 @@
 async function upvoteClickHandler(event) {
-  console.log("test");
   event.preventDefault();
 
-  // const id = window.location.toString().split("/")[
-  //   window.location.toString().split("/").length - 1
-  // ];
   let id = '';
 
   if (window.location.pathname === '/' || window.location.pathname === '/codehelp') {
-    id = document.querySelector(".card-title").id;
+    // id = document.querySelector(".card-title").id;
+    id = event.target.parentNode.parentNode.id;
+    console.log(id);
   } else {
     id = window.location.toString().split("/")[
       window.location.toString().split("/").length - 1
@@ -33,6 +31,7 @@ async function upvoteClickHandler(event) {
   }
 }
 
-document
-  .querySelector("#upvote-btn")
-  .addEventListener("click", upvoteClickHandler);
+document.querySelectorAll(".upvote-btn").forEach(el => {
+  el.addEventListener("click", upvoteClickHandler);
+});
+
