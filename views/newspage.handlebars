@@ -1,0 +1,22 @@
+{{!-- source, author, title, description, url, urlToImage, publishedAt, content --}}
+<div class="row">
+    {{#each newsData}}
+    <div class="card col-12 col-md-9 mb-3 mx-auto" style="margin-top: 1vh; padding:0">
+        <img class="card-img-top" src="{{urlToImage}}" alt="Card image cap">
+        <div class="card-body">
+            <div class="card-title">
+                {{!-- have href link to individual post pages --}}
+                <a href="{{url}}" target="_blank">{{title}}</a>
+                <h6 class="card-subtitle mb-2 text-muted" style="margin-top: 3px">by: {{author}}</h6>
+            </div>
+            <div class="card-text">
+                <p>{{description}}</p>
+            </div>
+            <div class="footer">
+                <p class="blockquote-footer">{{format_date publishedAt}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<script src="./javascript/news-page.js"></script>
