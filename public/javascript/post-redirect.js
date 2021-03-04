@@ -56,7 +56,7 @@ const redirect = (event) => {
     newPostTitle.setAttribute('style','margin-top: 1vh');
     const newPostTitleInput = document.createElement("input");
     newPostTitleInput.classList.add("form-control");
-    newPostTitleInput.setAttribute('id','post-title');
+    newPostTitleInput.setAttribute('name','post-title');
     newPostTitleInput.setAttribute('placeholder','Enter Title');
 
     //create form group two div
@@ -67,22 +67,25 @@ const redirect = (event) => {
     newPostBody.textContent = "Body:";
     const newPostBodyInput = document.createElement("textarea");
     newPostBodyInput.classList.add("form-control");
-    newPostBodyInput.setAttribute('id','post-body');
+    newPostBodyInput.setAttribute('name','post-body');
     newPostBodyInput.setAttribute('placeholder','Enter Body');
 
     //create submission button
     const newPostSubBtn = document.createElement("button");
     newPostSubBtn.classList.add("btn");
+    newPostSubBtn.classList.add("newpost-btn");
+    newPostSubBtn.setAttribute('type',"submit");
+    newPostSubBtn.setAttribute('id',"new-post-btn");
 
     //change name of button depending on window location
     const btnId = () => {
         let loc = window.location.pathname;
         switch(loc) {
             case '/':
-                newPostSubBtn.setAttribute('name','new-post-submit-codehelpfalse');
+                newPostSubBtn.setAttribute('id','new-post-submit-codehelpfalse');
                 break;
             case '/codehelp':
-                newPostSubBtn.setAttribute('name','new-post-submit-codehelptrue');
+                newPostSubBtn.setAttribute('id','new-post-submit-codehelptrue');
                 break;
         }
     }
@@ -108,6 +111,11 @@ const redirect = (event) => {
     newPostBox.appendChild(newPostCard);
     //append post container to document body
     document.querySelector('#modal-placement').prepend(newPostBox);
+
+    //add script to file
+    const newPostScript = document.createElement('script')
+    newPostScript.setAttribute("src",'/javascript/add-post.js');
+    document.querySelector('body').appendChild(newPostScript)
 }
 
 document.querySelector('.replace').addEventListener('click',redirect);

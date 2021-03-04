@@ -3,6 +3,27 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {
     //insert custom functions here
+    static upvote(body, models) {
+        return models.Vote.create({
+            user_id: body.user_id,
+            post_id: body.post_id
+        }).then(() => {
+            return Post.findOne({
+                where: {
+                    id: body.post_id
+                },
+                attributes: [
+                    'id',
+                    'post_url',
+                    'title',
+                    'created_at',
+                    [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id'),
+                        'vote_count'
+                    ]
+                ]
+            });
+        });
+    }
 }
 
 //define table columns and how they are configured
