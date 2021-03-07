@@ -65,6 +65,7 @@ Post.init(
     underscored: true,
     freezeTableName: true,
     modelName: "post",
+    onDelete: 'CASCADE'
   }
 );
 

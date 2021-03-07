@@ -18,7 +18,18 @@ async function loginFormHandler(event) {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      console.log(response.data);
+      //remove alert if already there so it doesnt stack
+      if (document.querySelector(".alert")){
+        document.querySelector(".alert").remove();
+      }
+      //alert of wrong password
+      const wrongPass = document.createElement("div");
+      wrongPass.classList.add("alert");
+      wrongPass.classList.add("alert-danger");
+      wrongPass.setAttribute("style","transition: width 0.5s");
+      wrongPass.textContent = "Incorrect Password";
+      document.querySelector(".pass").appendChild(wrongPass);
     }
   }
 }

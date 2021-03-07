@@ -3,10 +3,12 @@
         <div class="card-body">
             <div class="card-title">
                 {{!-- have href link to individual post pages --}}
-                <a href="/post/{{post.id}}"><h5>{{post.title}}</h5></a>
+                <a>Title:</a>
+                <input id="post-title" class="col-12" style="margin-top: 2vh" value="{{post.title}}"></input>
             </div>
             <div class="card-text">
-                <p style="white-space: pre-line">{{post.body}}</p>
+                <a>Body:</a>
+                <textarea id="post-body" class="col-12" style="margin-top: 1vh">{{post.body}}</textarea>
                 <p class="blockquote-footer">by <a href="/userpage/{{post.user.id}}">{{post.user.username}}</a> on
                     {{format_date post.created_at}}</p>
             </div>
@@ -15,20 +17,11 @@
                 |
                 <a href="/post/{{post.id}}">{{post.comments.length}}
                     {{format_plural "comment" post.comments.length}}</a>
-                {{#if loggedIn}}
-                <textarea name="comment-body" class="col-12"></textarea>
-                <button class="btn upvote-btn"><span class="oi oi-star"></span> Like</button>
-                <button id="comment-button" class="btn"><span class="oi oi-code"></span> Comment</button>
-                {{else}}
-                <h6 class="footer" style="color:grey; margin-top: 1vh">login to like and comment</h6>
-                {{/if}}
+                </br>
+                <button class="btn edit-post-form btn-warning col-6 col-md-2"></span><span
+                        class="oi oi-pencil"></span> Save</button>
             </div>
         </div>
     </div>
 </div>
-<div class="mx-auto col-12 col-md-8 mb-3">
-{{> comments post.comments }}
-</div>
-
-<script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
+<script src="/javascript/edit-post.js"></script>

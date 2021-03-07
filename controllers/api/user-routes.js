@@ -88,6 +88,7 @@ router.post('/login', (req, res) => {
 
         if (!validPassword) {
             res.status(400).json({ message: 'Incorrect password!' });
+            res.body = "Incorrect Password";
             return;
         }
         req.session.save(() => {

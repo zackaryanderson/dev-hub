@@ -1,13 +1,16 @@
 <div class="comments">
     {{#each this}}
     <div class="card mx-auto" style="margin-bottom:1vh">
+        
         <div class="card-body">
-            <div class="card-text">
-                <a href="/userpage/{{user.id}}">{{user.username}}</a> on {{format_date created_at}}
+            <div class="card-title">
+                <a href="/userpage/{{user.id}}">{{user.username}}</a> said, on {{format_date created_at}},
             </div>
-            <div class="text">
+            <div class="card-text" style="white-space: pre-line">
                 {{comment_text}}
             </div>
+            {{!-- <div class="text" style="white-space: pre-line">
+            </div> --}}
         </div>
     </div>
     {{/each}}

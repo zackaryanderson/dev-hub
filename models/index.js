@@ -45,7 +45,8 @@ Comment.belongsTo(User, {
 });
 
 Comment.belongsTo(Post, {
-    foreignKey: 'post_id'
+    foreignKey: 'post_id',
+    onDelete: 'cascade'
 });
 
 User.hasMany(Comment, {
@@ -56,30 +57,30 @@ Post.hasMany(Comment, {
     foreignKey: 'post_id'
 });
 
-//following
-Following.belongsTo(User, {
-    foreignKey: "followee_id"
-});
+// //following
+// Following.belongsTo(User, {
+//     foreignKey: "followee_id"
+// });
 
-Following.belongsTo(User, {
-    foreignKey: "follower_id"
-});
+// Following.belongsTo(User, {
+//     foreignKey: "follower_id"
+// });
 
-User.hasMany(Following, {
-    foreignKey: "followee_id"
-});
+// User.hasMany(Following, {
+//     foreignKey: "followee_id"
+// });
 
-//followers
-Followers.belongsTo(User, {
-    foreignKey: "follower_id"
-});
+// //followers
+// Followers.belongsTo(User, {
+//     foreignKey: "follower_id"
+// });
 
-Followers.belongsTo(User, {
-    foreignKey: "followee_id"
-});
+// Followers.belongsTo(User, {
+//     foreignKey: "followee_id"
+// });
 
-User.hasMany(Followers, {
-    foreignKey: "follower_id"
-});
+// User.hasMany(Followers, {
+//     foreignKey: "follower_id"
+// });
 
 module.exports = { User, Post, Vote, Comment };

@@ -2,10 +2,10 @@
     <div class="card-body" id="{{id}}">
         <div class="card-title">
             {{!-- have href link to individual post pages --}}
-            <a href="/post/{{id}}">{{title}}</a>
+            <a href="/post/{{id}}"><h5>{{title}}</h5></a>
         </div>
         <div class="card-text">
-            <p>{{body}}</p>
+            <p style="white-space: pre-line">{{body}}</p>
             <p class="blockquote-footer">by <a href="/userpage/{{user.id}}">{{user.username}}</a> on
             {{format_date created_at}}</p>
         </div>

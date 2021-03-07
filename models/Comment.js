@@ -30,7 +30,8 @@ Comment.init(
             allowNull: false,
             references: {
                 model: 'post',
-                key: 'id'
+                key: 'id',
+                onDelete: "CASCADE"
             }
         }
     },
@@ -38,7 +39,7 @@ Comment.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'comment'
+        modelName: 'comment',
     }
 );
 

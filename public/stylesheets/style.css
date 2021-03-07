@@ -54,7 +54,8 @@ main {
 }
 
 div a {
-    color: var(--secondary-color);
+    /* color: var(--secondary-color); */
+    color: #36454f;
 }
 
 div a:hover{
@@ -62,7 +63,7 @@ div a:hover{
     color: var(--fourth-color);
 }
 
-div .btn {
+.btn {
     background-color: var(--fifth-color);
     border-radius: 12px;
     margin-top: 5px;
@@ -119,6 +120,18 @@ div .card {
 
 .small-margin {
     margin-top: 3vh;
+}
+
+.delete-post-btn {
+    background-color: #dc3545;
+}
+
+.edit-post-form {
+    background-color: #ffc107
+}
+
+textarea {
+    height: 15vh;
 }
 
 @media screen and (max-width: 800px){
