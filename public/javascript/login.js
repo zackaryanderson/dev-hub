@@ -5,7 +5,8 @@ async function loginFormHandler(event) {
   const email = document.getElementById("email-login").value.trim();
   const password = document.getElementById("password-login").value.trim();
 
-  if (email && password.length >= 8) {
+  //if email and password exsist
+  if (email && password) {
     const response = await fetch("/api/users/login", {
       method: "post",
       body: JSON.stringify({
@@ -18,19 +19,38 @@ async function loginFormHandler(event) {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      console.log(response.data);
-      //remove alert if already there so it doesnt stack
-      if (document.querySelector(".alert")){
-        document.querySelector(".alert").remove();
-      }
-      //alert of wrong password
-      const wrongPass = document.createElement("div");
-      wrongPass.classList.add("alert");
-      wrongPass.classList.add("alert-danger");
-      wrongPass.setAttribute("style","transition: width 0.5s");
-      wrongPass.textContent = "Incorrect Password";
-      document.querySelector(".pass").appendChild(wrongPass);
+      //console.log(response.data);//<==================================
+      let data = {};
+      response.json().then((responseData) => {
+        data = responseData;
+
+        //remove alert if already there so it doesnt stack
+        if (document.querySelector(".alert")) {
+          document.querySelector(".alert").remove();
+        }
+
+        if (responseData.message === "Incorrect password!") {
+          //if wrong password alert of wrong password
+          const wrongPass = document.createElement("div");
+          wrongPass.classList.add("alert");
+          wrongPass.classList.add("alert-danger");
+          wrongPass.setAttribute("style", "transition: width 0.5s");
+          wrongPass.textContent = "Incorrect Password";
+          document.querySelector(".pass").appendChild(wrongPass);
+        } else {
+          //if bad email alert bad email
+          const userNotFound = document.createElement("div");
+          userNotFound.classList.add("alert");
+          userNotFound.classList.add("alert-danger");
+          userNotFound.setAttribute("style", "transition: width 0.5s");
+          userNotFound.textContent = "User Not Found";
+          document.querySelector(".email").appendChild(userNotFound);
+        }
+      });
     }
+  } else {
+    //if there is no username or password
+    alert("Please Enter a Username and Password");
   }
 }
 
