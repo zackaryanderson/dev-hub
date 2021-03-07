@@ -18,7 +18,16 @@ async function signupFormHandler(event) {
         });
         if (response.ok) {
             console.log("success");
-            document.location.replace('/login');
+            const successful = document.createElement("div");
+            successful.classList.add("alert");
+            successful.classList.add("alert-success");
+            successful.setAttribute("style", "transition: 0.5s");
+            successful.setAttribute("style", "margin-top: 1vh");
+            successful.textContent = "User Successfully Created!";
+            document.querySelector(".success").appendChild(successful);
+            setTimeout(function () {
+                document.location.replace('/login');
+            }, 1000);
         } else {
             alert(response.statusText);
         }
