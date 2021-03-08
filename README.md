@@ -13,9 +13,10 @@
 
   DevHub is the community hub for developers. From posting about day to day things to asking for help on technical work as well as staying up to date on current software news, DevHub is the place for it all. Join the community today!
   
-  ![Screen Shot](/public/images/homePage.png)
-  
   ![License Badge](https://img.shields.io/badge/license-MIT-brightgreen)
+  
+  SCREENSHOT:
+  ![Screen Shot](/public/images/homePage.png)
   
 
   
