@@ -3,7 +3,7 @@ async function upvoteClickHandler(event) {
 
   let id = '';
 
-  if (window.location.pathname === '/' || window.location.pathname === '/codehelp') {
+  if (window.location.pathname === '/' || window.location.pathname === '/codehelp' || window.location.pathname === '/userpage') {
     // id = document.querySelector(".card-title").id;
     id = event.target.parentNode.parentNode.id;
     console.log(id);

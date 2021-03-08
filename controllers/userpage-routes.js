@@ -73,7 +73,7 @@ router.get('/', auth,(req, res) => {
                 return;
             }
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('userpage',{ posts, loggedIn: req.session.loggedIn });
+            res.render('myuserpage',{ posts, loggedIn: req.session.loggedIn });
         })
         .catch(err => {
             console.log(err);

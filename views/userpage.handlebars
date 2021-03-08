@@ -1,12 +1,6 @@
 <div class="spacing-for-nav" style="margin-top: 14vh">
     <div class="mx-auto col-md-10 col-11 small-margin" style="margin-left: 40px;">
         {{#each posts as |post|}}
-        <div class="card">
-            <div class="card-body" id="{{post.id}}">
-                <button class="btn delete-post-btn btn-danger text-dark col-2"></span><span class="oi oi-trash"></span> Delete</button>
-                <a class="btn edit-post-form btn-warning col-2" href="/userpage/edit/{{post.id}}"></span><span class="oi oi-pencil"></span> Edit</a>
-            </div>
-        </div>
         {{> post-info post}}
         <div class="mx-auto col-12 col-md-10 mb-3">
             {{> comments post.comments }}
@@ -15,3 +9,4 @@
     </div>
 </div>
 <script src="/javascript/delete-post.js"></script>
+<script src="/javascript/upvote.js"></script>

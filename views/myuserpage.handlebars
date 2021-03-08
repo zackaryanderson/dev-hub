@@ -1,0 +1,40 @@
+<div class="spacing-for-nav" style="margin-top: 14vh">
+    <div class="mx-auto col-md-10 col-11 small-margin" style="margin-left: 40px;">
+        {{#each posts as |post|}}
+        <div class="card col-12 mb-3 mx-auto">
+            <div class="card-body" id="{{id}}">
+                <div class="card-title">
+                    {{!-- have href link to individual post pages --}}
+                    <a href="/post/{{id}}">
+                        <h5>{{title}}</h5>
+                    </a>
+                </div>
+                <div class="card-text">
+                    <p style="white-space: pre-line">{{body}}</p>
+                    <p class="blockquote-footer">by <a href="/userpage/{{user.id}}">{{user.username}}</a> on
+                        {{format_date created_at}}</p>
+                </div>
+                <div class="footer">
+                    {{vote_count}} {{format_plural "like" vote_count}}
+                    |
+                    <a href="/post/{{id}}"> {{comments.length}} {{format_plural "comment" comments.length}}</a>
+                    <div class="col-12"></div>
+                    <button class="btn upvote-btn col-4 col-md-2"><span class="oi oi-star"></span>Like</button>
+                    <a id="comment-button" class="btn comment-btn col-7 col-md-2" href="/post/{{id}}"><span class="oi oi-code"></span>
+                        Comment</a>
+                    <button class="btn delete-post-btn btn-danger text-dark col-12 col-md-2"></span><span
+                            class="oi oi-trash"></span>
+                        Delete</button>
+                    <a class="btn edit-post-form btn-warning col-12 col-md-2" href="/userpage/edit/{{post.id}}"></span><span
+                            class="oi oi-pencil"></span> Edit</a>
+                </div>
+            </div>
+        </div>
+        <div class="mx-auto col-12 col-md-10 mb-3">
+            {{> comments post.comments }}
+        </div>
+        {{/each}}
+    </div>
+</div>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/upvote.js"></script>

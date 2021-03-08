@@ -69,7 +69,8 @@ div a:hover{
     margin-top: 5px;
 }
 div .btn:hover{
-    background-color: var(--fourth-color);
+    background-color: #0E1428;
+    color: white;
 }
 
 div .card {
@@ -116,6 +117,14 @@ div .card {
     font-weight: bold;
     transition: color .1s;
     margin-left: 16px;
+}
+
+.upvote-btn{
+    background-color: #F0A202;
+}
+
+.comment-btn{
+    background-color: #D95D39;
 }
 
 .small-margin {

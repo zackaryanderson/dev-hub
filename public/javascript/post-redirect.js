@@ -10,7 +10,8 @@ const redirect = (event) => {
     //create card div
     const newPostCard = document.createElement("div");
     newPostCard.classList.add("card");
-    newPostCard.classList.add("col-6");
+    newPostCard.classList.add("col-11");
+    newPostCard.classList.add("col-md-6");
     newPostCard.classList.add("mx-auto");
     newPostCard.classList.add("modal-card");
     newPostCard.setAttribute('style','padding:0');
