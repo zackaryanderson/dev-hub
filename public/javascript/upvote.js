@@ -23,11 +23,21 @@ async function upvoteClickHandler(event) {
     },
   });
 
-  if (response.ok) {
+  if (response.status === 500) {
     document.location.reload();
   } else {
     //alert(response.statusText);
-    document.location.reload();
+    //document.location.reload();
+    if (document.querySelector(".alert")) {
+      document.querySelector(".alert").remove();
+    }
+
+    const newAlert = document.createElement("div");
+    newAlert.classList.add("alert");
+    newAlert.classList.add("alert-danger");
+    newAlert.setAttribute("style", "margin-top: 5px");
+    newAlert.textContent = "Please Login to Like a Post";
+    document.querySelector(".footer").appendChild(newAlert);
   }
 }
 
